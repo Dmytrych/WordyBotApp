@@ -14,7 +14,7 @@ namespace WordyBotApp.Models.Commands
 
         public abstract void Execute(Telegram.Bot.Types.Message message, TelegramBotClient botClient);
 
-        public bool Contains(string command)
+        public bool ContainsIn(string command)
         {
             return command.Contains(this.Name) && command.Contains(AppSettings.Name);
         }

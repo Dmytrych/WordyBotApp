@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using WordyBotApp.Models;
 
 namespace WordyBotApp
 {
@@ -13,6 +14,7 @@ namespace WordyBotApp
     {
         public static void Main(string[] args)
         {
+            Bot.Get();
             CreateHostBuilder(args).Build().Run();
         }
 

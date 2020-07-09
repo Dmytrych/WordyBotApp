@@ -20,11 +20,13 @@ namespace WordyBotApp.Models
             {
                 return botClient;
             }
+            commandsList = new List<Command>();
             commandsList.Add(new TestCommand());
             //Add new commands here
 
             botClient = new TelegramBotClient(AppSettings.Token);
-            await botClient.SetWebhookAsync(AppSettings.Url);
+            var hook = string.Format(AppSettings.Url, "api/MessageController");
+            await botClient.SetWebhookAsync(hook);
 
             return botClient;
         }
